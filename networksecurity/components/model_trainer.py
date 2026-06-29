@@ -37,6 +37,17 @@ class ModelTrainer:
             raise NetworkSecurityException(e,sys)
     
     def track_mlflow(self,best_model,classificationmetric):
+        # Grab the credentials from Render's environment
+        dagshub_user = os.getenv("MLFLOW_TRACKING_USERNAME")
+        dagshub_token = os.getenv("MLFLOW_TRACKING_PASSWORD")
+
+        # Set up authentication headers explicitly
+        os.environ["MLFLOW_TRACKING_USERNAME"] = dagshub_user if dagshub_user else ""
+        os.environ["MLFLOW_TRACKING_PASSWORD"] = dagshub_token if dagshub_token else ""
+
+        # Point directly to your DagsHub MLflow URI
+        mlflow.set_tracking_uri(f"https://dagshub.com/{dagshub_user}/Network-Security-System.mlflow")
+        mlflow.set_experiment("Network_Security_Training")
         with mlflow.start_run():
             f1_score=classificationmetric.f1_score
             precision_score=classificationmetric.precision_score
