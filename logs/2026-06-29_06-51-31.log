@@ -1,0 +1,6 @@
+[2026-06-29 06:51:35,553] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2026-06-29 06:51:35,569] 107 dagshub - INFO - Accessing as XVIN-X
+[2026-06-29 06:51:36,820] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/XVIN-X/Network-Security-System "HTTP/1.1 200 OK"
+[2026-06-29 06:51:37,779] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2026-06-29 06:51:37,795] 107 dagshub - INFO - Initialized MLflow to track repo "XVIN-X/Network-Security-System"
+[2026-06-29 06:51:37,795] 107 dagshub - INFO - Repository XVIN-X/Network-Security-System initialized!
